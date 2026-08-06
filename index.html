@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Tags -->
+  <title>Maricela Montiel | Energía y Armonía</title>
+  <meta name="description" content="Align your life energy, recover physical balance, and quiet your mind with specialized Reiki sessions, restorative yoga, and personalized meditation.">
+  <meta name="keywords" content="Reiki healing, yoga classes, guided meditation, chakra balance, distance Reiki, mindfulness training, life guidance request, sound healing">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Maricela Montiel | Energía y Armonía">
+  <meta property="og:description" content="Find alignment, peace, and healing guidance. Book physical/online Reiki, Yoga, and Meditation sessions.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="solar">
+
+  <!-- Ambient background aura blobs (Prana flow) -->
+  <div class="aura-container">
+    <div class="aura-blob aura-1" id="auraBlob1"></div>
+    <div class="aura-blob aura-2" id="auraBlob2"></div>
+    <div class="aura-blob aura-3" id="auraBlob3"></div>
+  </div>
+
+  <!-- Floating Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="navbar-container">
+      <a href="#" class="logo" id="navLogo">
+        <!-- Lotus Abstract SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+          <path d="M12 2C11.5 4 9.5 7.5 7.5 9.5c-2 2-5.5 3-7.5 2.5 2 .5 5.5-.5 7.5-2.5C9.5 7.5 11.5 4 12 2zm0 0c.5 2 2.5 5.5 4.5 7.5 2 2 5.5 3 7.5 2.5-2-.5-5.5.5-7.5 2.5-2 2-4 5.5-4.5 7.5-.5-2-2.5-5.5-4.5-7.5-2-2-5.5-3-7.5-2.5 2 .5 5.5-.5 7.5-2.5.5-2.5.75-4.75 2.5-7.5zm0 0c.5 2 2.5 5.5 4.5 7.5 2 2 5.5 3 7.5 2.5-2-.5-5.5.5-7.5 2.5C14.5 16.5 12.5 20 12 22v-20z" />
+        </svg>
+        <span>Maricela Montiel</span>
+      </a>
+      
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about" id="lnkAbout">About</a></li>
+          <li><a href="#services" id="lnkServices">Services</a></li>
+          <li><a href="#events" id="lnkEvents">Upcoming Events</a></li>
+          <li><a href="#guidance" id="lnkGuidance">Seek Support</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle zen theme">
+          <!-- Sun Icon -->
+          <svg class="sun" viewBox="0 0 24 24">
+            <path d="M12,18C15.31,18 18,15.31 18,12C18,8.69 15.31,6 12,6C8.69,6 6,8.69 6,12C6,15.31 8.69,18 12,18M12,20C7.58,20 4,16.42 4,12C4,7.58 7.58,4 12,4C16.42,4 20,7.58 20,12C20,16.42 16.42,20 12,20M12,1A1,1 0 0,1 13,2V3A1,1 0 0,1 12,4A1,1 0 0,1 11,3V2A1,1 0 0,1 12,1M12,20A1,1 0 0,1 13,21V22A1,1 0 0,1 12,23A1,1 0 0,1 11,22V21A1,1 0 0,1 12,20M22,12A1,1 0 0,1 21,13H20A1,1 0 0,1 19,12A1,1 0 0,1 20,11H21A1,1 0 0,1 22,12M4,12A1,1 0 0,1 3,13H2A1,1 0 0,1 1,12A1,1 0 0,1 2,11H3A1,1 0 0,1 4,12M18.36,17C17.97,17.39 17.34,17.39 16.95,17L16.24,16.29C15.85,15.9 15.85,15.27 16.24,14.88C16.63,14.49 17.26,14.49 17.66,14.88L18.37,15.59C18.76,15.97 18.76,16.6 18.36,17M7.76,6.41C7.37,6.8 6.74,6.8 6.35,6.41L5.64,5.7C5.25,5.31 5.25,4.68 5.64,4.29C6.03,3.9 6.66,3.9 7.05,4.29L7.76,5C8.15,5.39 8.15,6.02 7.76,6.41M18.36,5.64C18.76,6.03 18.76,6.66 18.36,7.05L17.65,7.76C17.26,8.15 16.63,8.15 16.24,7.76C15.85,7.37 15.85,6.74 16.24,6.35L16.95,5.64C17.34,5.25 17.97,5.25 18.36,5.64M7.76,17.59C8.15,17.98 8.15,18.61 7.76,19L7.05,19.71C6.66,20.1 6.03,20.1 5.64,19.71C5.25,19.32 5.25,18.69 5.64,18.3L6.35,17.59C6.74,17.2 7.37,17.2 7.76,17.59Z" />
+          </svg>
+          <!-- Moon Icon -->
+          <svg class="moon" viewBox="0 0 24 24">
+            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4Z" />
+          </svg>
+        </button>
+        <button class="lang-toggle-btn" id="langToggleBtn" aria-label="Toggle language">ES</button>
+        <button class="btn btn-primary" id="btnHeaderConsultation">Book Consultation</button>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open navigation drawer">
+          <svg viewBox="0 0 24 24">
+            <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay">
+    <div class="mobile-nav-drawer" id="mobileNavDrawer">
+      <ul class="mobile-nav-links">
+        <li><a href="#about" id="mobileLnkAbout">About</a></li>
+        <li><a href="#services" id="mobileLnkServices">Services</a></li>
+        <li><a href="#events" id="mobileLnkEvents">Upcoming Events</a></li>
+        <li><a href="#guidance" id="mobileLnkGuidance">Seek Support</a></li>
+      </ul>
+      <button class="btn btn-primary" id="btnDrawerConsultation" style="width: 100%;">Book Consultation</button>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-grid">
+      <div class="hero-content reveal">
+        <span class="badge" id="heroBadge">Restore your Prana</span>
+        <h1 class="hero-title" id="heroTitle">
+          Reclaim Your
+          <span>Inner Peace & Energy</span>
+        </h1>
+        <p class="hero-description" id="heroDesc">
+          Experience transformative Reiki energy healing, alignment-focused yoga, and deep meditation classes designed to connect your physical state with spiritual tranquility.
+        </p>
+        <div class="hero-buttons">
+          <a href="#guidance" class="btn btn-primary" id="btnHeroGuidance">Request Healing Support</a>
+          <a href="#events" class="btn btn-secondary" id="btnHeroEvents">Upcoming Classes</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal delay-2">
+        <div class="sacred-geometry">
+          <div class="geometry-ring"></div>
+          <div class="geometry-ring"></div>
+          <div class="geometry-ring"></div>
+          <div class="geometry-center"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <!-- Elegant Lotus Line Art SVG -->
+        <svg class="lotus-vector" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 20 C42 35, 45 48, 50 65 C55 48, 58 35, 50 20 Z" />
+          <path d="M50 35 C35 43, 30 55, 30 65 C45 62, 48 50, 50 35 Z" />
+          <path d="M50 35 C65 43, 70 55, 70 65 C55 62, 52 50, 50 35 Z" />
+          <path d="M50 48 C28 55, 20 68, 15 75 C35 75, 43 65, 50 48 Z" />
+          <path d="M50 48 C72 55, 80 68, 85 75 C65 75, 57 65, 50 48 Z" />
+          <circle cx="50" cy="58" r="3" />
+        </svg>
+      </div>
+      <div class="about-content reveal delay-1">
+        <span class="badge" id="aboutBadge">Our Purpose</span>
+        <h2 id="aboutHeader">Awakening the Healer Within</h2>
+        <p id="aboutP1">
+          Hello, I am <strong>Maricela Montiel</strong>, a certified Usui Reiki Master, RYT-500 Yoga Instructor, and mindfulness guide. For over a decade, I have committed my practice to helping individuals locate their internal sources of wisdom, healing, and alignment.
+        </p>
+        <p id="aboutP2">
+          Through the gentle application of Reiki (universal life force energy), steady breathwork (Pranayama), restorative yoga postures, and deep meditation, I construct tailored pathways for clients looking to manage life's transitions, reduce acute anxiety, or reconnect with spiritual stillness.
+        </p>
+        <p id="aboutP3">
+          Whether we meet online via a virtual screen or in-person inside my quiet garden sanctuary, my mission is to hold a safe space for your healing.
+        </p>
+        <span class="signature">Maricela Montiel</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section" id="services" style="background-color: var(--bg-secondary); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);">
+    <div class="section-title-wrap reveal">
+      <span class="badge" id="srvBadge">Offerings</span>
+      <h2 class="section-title" id="servicesTitle">Healing Modalities</h2>
+      <p class="section-subtitle" id="srvSubtitle">Discover structured approaches to alignment. We offer private sessions online or in-person.</p>
+    </div>
+    
+    <div class="services-grid">
+      <!-- Reiki Healing -->
+      <div class="service-card reveal">
+        <div class="service-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 2v20M2 12h20"/>
+          </svg>
+        </div>
+        <h3 id="srvReikiTitle">Usui Reiki Healing</h3>
+        <p id="srvReikiDesc">
+          Channeling universal lifeforce energy to release energetic blockages, activate the parasympathetic nervous system, and stimulate deep cellular recovery.
+        </p>
+        <ul class="service-features">
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9,20.42L3.92,15.34L5.34,13.92L9,17.59L18.66,7.92L20.08,9.34L9,20.42Z"/></svg>
+            <span id="srvReikiLi1">In-person hands-on healing</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9,20.42L3.92,15.34L5.34,13.92L9,17.59L18.66,7.92L20.08,9.34L9,20.42Z"/></svg>
+            <span id="srvReikiLi2">Distance / Online sessions</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9,20.42L3.92,15.34L5.34,13.92L9,17.59L18.66,7.92L20.08,9.34L9,20.42Z"/></svg>
+            <span id="srvReikiLi3">Chakra assessment & balancing</span>
+          </li>
+        </ul>
+        <button class="btn-text btnOpenBooking" data-modality="Reiki Healing">
+          Book session 
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Yoga Restorative -->
+      <div class="service-card reveal delay-1">
+        <div class="service-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2a3 3 0 1 0 0 6 3 3 0 1 0 0-6z"/>
+            <path d="M19 10H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2z"/>
+          </svg>
+        </div>
+        <h3 id="srvYogaTitle">Yoga & Pranayama</h3>
+        <p id="srvYogaDesc">
+          Gentle movement flows, alignment techniques, and breathing exercises (Pranayama) tailored to restore mobility, ease joint stiffness, and generate fluid strength.
+        </p>
+        <ul class="service-features">
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9,20.42L3.92,15.34L5.34,13.92L9,17.59L18.66,7.92L20.08,9.34L9,20.42Z"/></svg>
+            <span id="srvYogaLi1">1-on-1 private tuition</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9,20.42L3.92,15.34L5.34,13.92L9,17.59L18.66,7.92L20.08,9.34L9,20.42Z"/></svg>
+            <span id="srvYogaLi2">Yin & Restorative alignments</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9,20.42L3.92,15.34L5.34,13.92L9,17.59L18.66,7.92L20.08,9.34L9,20.42Z"/></svg>
+            <span id="srvYogaLi3">Breathwork for anxious minds</span>
+          </li>
+        </ul>
+        <button class="btn-text btnOpenBooking" data-modality="Yoga & Pranayama">
+          Book session 
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Guided Meditation -->
+      <div class="service-card reveal delay-2">
+        <div class="service-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 3a9 9 0 0 0-9 9c0 4.97 4.03 9 9 9s9-4.03 9-9c0-2-1-3-3-5s-4-3-6-3z"/>
+          </svg>
+        </div>
+        <h3 id="srvMedTitle">Guided Meditation</h3>
+        <p id="srvMedDesc">
+          Cultivate stillness and sensory awareness through sound-assisted meditations, chakra visualizations, and modern nidra sessions designed to anchor focus.
+        </p>
+        <ul class="service-features">
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9,20.42L3.92,15.34L5.34,13.92L9,17.59L18.66,7.92L20.08,9.34L9,20.42Z"/></svg>
+            <span id="srvMedLi1">Vocal guidance & sound bowls</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9,20.42L3.92,15.34L5.34,13.92L9,17.59L18.66,7.92L20.08,9.34L9,20.42Z"/></svg>
+            <span id="srvMedLi2">Mindfulness habit formation</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9,20.42L3.92,15.34L5.34,13.92L9,17.59L18.66,7.92L20.08,9.34L9,20.42Z"/></svg>
+            <span id="srvMedLi3">Yoga Nidra sleep journeys</span>
+          </li>
+        </ul>
+        <button class="btn-text btnOpenBooking" data-modality="Guided Meditation">
+          Book session 
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events Section -->
+  <section class="section" id="events">
+    <div class="section-title-wrap reveal">
+      <span class="badge" id="evBadge">Join Us</span>
+      <h2 class="section-title" id="eventsTitle">Upcoming Events & Gatherings</h2>
+      <p class="section-subtitle" id="evSubtitle">Secure your place in our next collective healing circle. Available both in-person at our sanctuary and online globally.</p>
+    </div>
+    
+    <div class="events-controls reveal">
+      <button class="filter-btn active" data-filter="all" id="btnFilterAll">All Gatherings</button>
+      <button class="filter-btn" data-filter="in-person" id="btnFilterInPerson">In-Person</button>
+      <button class="filter-btn" data-filter="online" id="btnFilterOnline">Online Zoom</button>
+    </div>
+    
+    <div class="events-grid" id="eventsGrid">
+      <!-- Dynamic list loaded by app.js -->
+    </div>
+  </section>
+
+  <!-- Guidance Request Form (Seeking Help) -->
+  <section class="section guidance-section" id="guidance" style="border-top: 1px solid var(--card-border);">
+    <div class="guidance-container">
+      <div class="guidance-info reveal">
+        <span class="badge" id="guidBadge">Request Assistance</span>
+        <h2 id="guidanceHeader">Need Help Navigating <span>Life's Transitions?</span></h2>
+        <p id="guidanceP1">
+          Life can present us with heavy burdens, blockages, or emotional fatigue. If you are seeking relief, transition assistance, or general spiritual alignment, please reach out.
+        </p>
+        <p id="guidanceP2">
+          This form is a confidential space. Share as much or as little as you feel comfortable. Maricela reviews every submission personally to suggest customized Reiki routines, meditation frequencies, or tailored class layouts to help support your situation.
+        </p>
+        <p id="guidanceP3">
+          <em>"The first step of healing is acknowledging where we feel tender."</em>
+        </p>
+      </div>
+      
+      <div class="form-card reveal delay-1">
+        <form id="guidanceForm" novalidate>
+          <div class="form-group">
+            <label class="form-label" id="lblGuidName" for="guidName">Name</label>
+            <input type="text" id="guidName" class="form-control" placeholder="Your name" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" id="lblGuidEmail" for="guidEmail">Email Address</label>
+            <input type="email" id="guidEmail" class="form-control" placeholder="Your email address" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" id="lblGuidMood">How is your state today? (Select all that apply)</label>
+            <div class="mood-checkboxes">
+              <label class="mood-pill">
+                <input type="checkbox" name="state" value="anxious">
+                <span id="lblMoodAnxious">Anxious / Overwhelmed</span>
+              </label>
+              <label class="mood-pill">
+                <input type="checkbox" name="state" value="tired">
+                <span id="lblMoodTired">Fatigued / Low energy</span>
+              </label>
+              <label class="mood-pill">
+                <input type="checkbox" name="state" value="pain">
+                <span id="lblMoodPain">Physical pain / Discomfort</span>
+              </label>
+              <label class="mood-pill">
+                <input type="checkbox" name="state" value="transition">
+                <span id="lblMoodTransition">Life transition / Change</span>
+              </label>
+              <label class="mood-pill">
+                <input type="checkbox" name="state" value="stuck">
+                <span id="lblMoodStuck">Feeling stuck or blocked</span>
+              </label>
+              <label class="mood-pill">
+                <input type="checkbox" name="state" value="growth">
+                <span id="lblMoodGrowth">Seeking spiritual growth</span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" id="lblGuidStory" for="guidStory">What can we help you hold or heal?</label>
+            <textarea id="guidStory" class="form-control" placeholder="Tell us what you are currently carrying or trying to resolve..." required></textarea>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" id="lblGuidFocus" for="guidModality">Preferred Focus</label>
+              <select id="guidModality" class="form-control">
+                <option value="Reiki Energy Flow">Reiki Energy Flow</option>
+                <option value="Yoga & Breathwork">Yoga & Breathwork</option>
+                <option value="Guided Meditation">Guided Meditation</option>
+                <option value="Intuitive Combination" selected>Intuitive Combination</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" id="lblGuidSetting" for="guidSetting">Preferred Setting</label>
+              <select id="guidSetting" class="form-control">
+                <option value="Online / Virtual Zoom" selected>Online Zoom</option>
+                <option value="In-Person Sanctuary">In-Person Sanctuary</option>
+                <option value="Not Sure / Maricela's choice">Let Maricela recommend</option>
+              </select>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" id="btnSubmitGuidance" style="width: 100%; margin-top: 1rem;">
+            Send Confidential Request
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section" id="testimonials">
+    <div class="section-title-wrap reveal">
+      <span class="badge" id="tstBadge">Experiences</span>
+      <h2 class="section-title" id="testimonialsTitle">Healing Journeys</h2>
+      <p class="section-subtitle" id="tstSubtitle">Real experiences shared by individuals who have practiced with Maricela.</p>
+    </div>
+    
+    <div class="testimonials-slider reveal">
+      <div class="testimonial-track" id="testimonialTrack">
+        <div class="testimonial-slide">
+          <p class="testimonial-quote" id="tstQuote1">
+            "Maricela has a remarkable gift. After my first Reiki session, a constant tension in my chest that I'd carried for months simply dissipated. Distance Reiki felt just as profound as in-person."
+          </p>
+          <div class="testimonial-author">
+            <span class="testimonial-name" id="tstName1">Elena Rostova</span>
+            <span class="testimonial-role" id="tstRole1">Client since 2024 (Reiki & Meditation)</span>
+          </div>
+        </div>
+        
+        <div class="testimonial-slide">
+          <p class="testimonial-quote" id="tstQuote2">
+            "The Restorative Yoga flow on Sunday mornings is my anchors. It has restored mobility in my shoulders and taught me how to breathe through high-stress moments at work."
+          </p>
+          <div class="testimonial-author">
+            <span class="testimonial-name" id="tstName2">Marcus Brody</span>
+            <span class="testimonial-role" id="tstRole2">Client since 2023 (Yoga)</span>
+          </div>
+        </div>
+        
+        <div class="testimonial-slide">
+          <p class="testimonial-quote" id="tstQuote3">
+            "I filled out Maricela's guidance request form when going through a difficult divorce. Her compassionate response and subsequent custom meditation sequences were a lifeline."
+          </p>
+          <div class="testimonial-author">
+            <span class="testimonial-name" id="tstName3">Sarah Jenkins</span>
+            <span class="testimonial-role" id="tstRole3">Client since 2025 (Mentorship & Sound Circles)</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="slider-dots" id="sliderDots">
+        <button class="slider-dot active" data-index="0" aria-label="Go to testimonial slide 1"></button>
+        <button class="slider-dot" data-index="1" aria-label="Go to testimonial slide 2"></button>
+        <button class="slider-dot" data-index="2" aria-label="Go to testimonial slide 3"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M12 2C11.5 4 9.5 7.5 7.5 9.5c-2 2-5.5 3-7.5 2.5 2 .5 5.5-.5 7.5-2.5C9.5 7.5 11.5 4 12 2zm0 0c.5 2 2.5 5.5 4.5 7.5 2 2 5.5 3 7.5 2.5-2-.5-5.5.5-7.5 2.5-2 2-4 5.5-4.5 7.5-.5-2-2.5-5.5-4.5-7.5-2-2-5.5-3-7.5-2.5 2 .5 5.5-.5 7.5-2.5.5-2.5.75-4.75 2.5-7.5zm0 0c.5 2 2.5 5.5 4.5 7.5 2 2 5.5 3 7.5 2.5-2-.5-5.5.5-7.5 2.5C14.5 16.5 12.5 20 12 22v-20z" />
+          </svg>
+          <span>Maricela Montiel</span>
+        </a>
+        <p>Holding space for relaxation, energetic alignment, and mental clarity through ancient and modern wellness modalities.</p>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">Maricela's Story</a></li>
+          <li><a href="#services">Our Offerings</a></li>
+          <li><a href="#events">Gatherings</a></li>
+          <li><a href="#guidance">Submit Help Request</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Sanctuary</h4>
+        <ul>
+          <li><span style="color: var(--text-secondary); font-size: 0.95rem;">Madrid, España</span></li>
+          <li><span style="color: var(--text-secondary); font-size: 0.95rem; display: block; margin-top: 0.5rem;">hola@maricelamontiel.com</span></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 Maricela Montiel. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4A3.6,3.6 0 0,0 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6A3.6,3.6 0 0,0 16.4,4H7.6M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5Z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M10,15L15.19,12L10,9V15M21.56,7.11C21.72,7.69 21.88,8.87 21.88,10.05V13.95C21.88,15.13 21.72,16.31 21.56,16.89C21.4,17.47 20.93,17.94 20.35,18.1C19.77,18.26 18.59,18.42 17.41,18.42H6.59C5.41,18.42 4.23,18.26 3.65,18.1C3.07,17.94 2.6,17.47 2.44,16.89C2.28,16.31 2.12,15.13 2.12,13.95V10.05C2.12,8.87 2.28,7.69 2.44,7.11C2.6,6.53 3.07,6.06 3.65,5.9C4.23,5.74 5.41,5.58 6.59,5.58H17.41C18.59,5.58 19.77,5.74 20.35,5.9C20.93,6.06 21.4,6.53 21.56,7.11Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Booking & Consultation Modal -->
+  <div class="modal-overlay" id="bookingModalOverlay">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="btnCloseBookingModal" aria-label="Close modal">
+        <svg viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/></svg>
+      </button>
+      <h3 class="modal-title" id="bookingModalTitle">Book Consultation</h3>
+      <p class="modal-desc" id="bookingModalDesc">Reserve a complimentary 15-minute alignment call with Maricela to discuss your needs.</p>
+      
+      <form id="bookingForm" novalidate>
+        <input type="hidden" id="bkModality" value="General Inquiry">
+        
+        <div class="form-group">
+          <label class="form-label" id="lblBkName" for="bkName">Name</label>
+          <input type="text" id="bkName" class="form-control" placeholder="Your name" required>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label" id="lblBkEmail" for="bkEmail">Email Address</label>
+          <input type="email" id="bkEmail" class="form-control" placeholder="Your email address" required>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" id="lblBkDate" for="bkDate">Preferred Date</label>
+            <input type="date" id="bkDate" class="form-control" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" id="lblBkTime" for="bkTime">Preferred Time</label>
+            <select id="bkTime" class="form-control">
+              <option value="09:00 AM">09:00 AM</option>
+              <option value="11:00 AM">11:00 AM</option>
+              <option value="01:00 PM">01:00 PM</option>
+              <option value="04:00 PM">04:00 PM</option>
+              <option value="06:00 PM">06:00 PM</option>
+            </select>
+          </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" id="btnSubmitBooking" style="width: 100%; margin-top: 1rem;">
+          Schedule Alignment Call
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Event Sign-up Modal -->
+  <div class="modal-overlay" id="eventModalOverlay">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="btnCloseEventModal" aria-label="Close modal">
+        <svg viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/></svg>
+      </button>
+      <h3 class="modal-title" id="eventModalTitle">Reserve Spot</h3>
+      <p class="modal-desc" id="eventModalDesc">Join us for the next gathering.</p>
+      
+      <form id="eventRegForm" novalidate>
+        <input type="hidden" id="eventTargetId" value="">
+        
+        <div class="form-group">
+          <label class="form-label" id="lblEvRegName" for="evRegName">Name</label>
+          <input type="text" id="evRegName" class="form-control" placeholder="Your name" required>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label" id="lblEvRegEmail" for="evRegEmail">Email Address</label>
+          <input type="email" id="evRegEmail" class="form-control" placeholder="Your email address" required>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" id="lblEvRegTickets" for="evRegTickets">Attendance Count</label>
+            <select id="evRegTickets" class="form-control">
+              <option value="1">1 Person</option>
+              <option value="2">2 People</option>
+              <option value="3">3 People</option>
+              <option value="4">4 People</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" id="lblEvRegOption" for="evRegOption">Modality</label>
+            <select id="evRegOption" class="form-control">
+              <option value="Regular Admission">Standard Entry</option>
+              <option value="Support Tier / Supporter">Supporter Tier (+Donation)</option>
+            </select>
+          </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" id="btnSubmitEventReg" style="width: 100%; margin-top: 1rem;">
+          Confirm Event Registration
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Custom Success Toaster Notification -->
+  <div class="toast" id="successToast">
+    <svg width="24" height="24" fill="#fff" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+    <span id="toastMsg">Your request has been received with peace.</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
