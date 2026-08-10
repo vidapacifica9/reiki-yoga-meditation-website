@@ -1421,3 +1421,10 @@ textarea.form-control {
     padding: 2rem;
   }
 }
+
+/* Required field asterisks */
+.required-asterisk {
+  color: #e53e3e;
+  margin-left: 3px;
+  font-weight: bold;
+}

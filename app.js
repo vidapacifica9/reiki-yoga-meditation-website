@@ -127,8 +127,8 @@ const translations = {
     guidanceP2: "This form is a confidential space. Share as much or as little as you feel comfortable. Maricela reviews every submission personally to suggest customized Reiki routines, meditation frequencies, or tailored class layouts to help support your situation.",
     guidanceP3: '<em>"The first step of healing is acknowledging where we feel tender."</em>',
     
-    lblGuidName: "Name",
-    lblGuidEmail: "Email Address",
+    lblGuidName: 'Name <span class="required-asterisk">*</span>',
+    lblGuidEmail: 'Email Address <span class="required-asterisk">*</span>',
     lblGuidMood: "How is your state today? (Select all that apply)",
     lblMoodAnxious: "Anxious / Overwhelmed",
     lblMoodTired: "Fatigued / Low energy",
@@ -137,7 +137,7 @@ const translations = {
     lblMoodStuck: "Feeling stuck or blocked",
     lblMoodGrowth: "Seeking spiritual growth",
     
-    lblGuidStory: "What can we help you hold or heal?",
+    lblGuidStory: 'What can we help you hold or heal? <span class="required-asterisk">*</span>',
     lblGuidFocus: "Preferred Focus",
     lblGuidSetting: "Preferred Setting",
     btnSubmitGuidance: "Send Confidential Request",
@@ -156,16 +156,16 @@ const translations = {
     // Modals
     bookingModalTitle: "Book Consultation",
     bookingModalDesc: "Reserve a complimentary 15-minute alignment call with Maricela to discuss your needs.",
-    lblBkName: "Name",
-    lblBkEmail: "Email Address",
-    lblBkDate: "Preferred Date",
+    lblBkName: 'Name <span class="required-asterisk">*</span>',
+    lblBkEmail: 'Email Address <span class="required-asterisk">*</span>',
+    lblBkDate: 'Preferred Date <span class="required-asterisk">*</span>',
     lblBkTime: "Preferred Time",
     btnSubmitBooking: "Schedule Alignment Call",
     
     eventModalTitle: "Reserve Spot",
     eventModalDesc: "Join us for the next gathering.",
-    lblEvRegName: "Name",
-    lblEvRegEmail: "Email Address",
+    lblEvRegName: 'Name <span class="required-asterisk">*</span>',
+    lblEvRegEmail: 'Email Address <span class="required-asterisk">*</span>',
     lblEvRegTickets: "Attendance Count",
     lblEvRegOption: "Modality",
     btnSubmitEventReg: "Confirm Event Registration",
@@ -250,8 +250,8 @@ const translations = {
     guidanceP2: "Este formulario es un espacio confidencial. Comparte tanto o tan poco como te sientas cómodo/a. Maricela revisa cada solicitud personalmente para sugerir rutinas de Reiki personalizadas, frecuencias de meditación o clases adaptadas para apoyarte.",
     guidanceP3: '<em>"El primer paso de la sanación es reconocer dónde nos sentimos vulnerables."</em>',
     
-    lblGuidName: "Nombre",
-    lblGuidEmail: "Correo Electrónico",
+    lblGuidName: 'Nombre <span class="required-asterisk">*</span>',
+    lblGuidEmail: 'Correo Electrónico <span class="required-asterisk">*</span>',
     lblGuidMood: "¿Cómo te sientes hoy? (Selecciona todo lo que aplique)",
     lblMoodAnxious: "Ansiedad / Estrés",
     lblMoodTired: "Cansancio / Baja energía",
@@ -260,7 +260,7 @@ const translations = {
     lblMoodStuck: "Sensación de estancamiento / Bloqueo",
     lblMoodGrowth: "Crecimiento espiritual",
     
-    lblGuidStory: "¿Qué podemos ayudarte a sostener o sanar?",
+    lblGuidStory: '¿Qué podemos ayudarte a sostener o sanar? <span class="required-asterisk">*</span>',
     lblGuidFocus: "Enfoque Preferido",
     lblGuidSetting: "Modalidad Preferida",
     btnSubmitGuidance: "Enviar Solicitud Confidencial",
@@ -279,16 +279,16 @@ const translations = {
     // Modals
     bookingModalTitle: "Reservar Consulta",
     bookingModalDesc: "Reserva una videollamada de alineación gratuita de 15 minutos con Maricela para conversar sobre tus necesidades.",
-    lblBkName: "Nombre",
-    lblBkEmail: "Correo Electrónico",
-    lblBkDate: "Fecha de Preferencia",
+    lblBkName: 'Nombre <span class="required-asterisk">*</span>',
+    lblBkEmail: 'Correo Electrónico <span class="required-asterisk">*</span>',
+    lblBkDate: 'Fecha de Preferencia <span class="required-asterisk">*</span>',
     lblBkTime: "Hora de Preferencia",
     btnSubmitBooking: "Programar Llamada de Alineación",
     
     eventModalTitle: "Reservar Plaza",
     eventModalDesc: "Únete a nosotros en nuestro próximo encuentro.",
-    lblEvRegName: "Nombre",
-    lblEvRegEmail: "Correo Electrónico",
+    lblEvRegName: 'Nombre <span class="required-asterisk">*</span>',
+    lblEvRegEmail: 'Correo Electrónico <span class="required-asterisk">*</span>',
     lblEvRegTickets: "Número de Asistentes",
     lblEvRegOption: "Tipo de Entrada",
     btnSubmitEventReg: "Confirmar Registro al Evento",
@@ -358,7 +358,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const el = document.getElementById(id);
       if (el) {
         // Use innerHTML if text contains markup (like spans, linebreaks, strong tags)
-        if (el.tagName === "H1" || el.tagName === "H2" || el.id === "aboutP1" || el.id === "aboutP2" || el.id === "aboutP3" || el.id === "guidanceP3") {
+        if (el.tagName === "H1" || el.tagName === "H2" || el.id === "aboutP1" || el.id === "aboutP2" || el.id === "aboutP3" || el.id === "guidanceP3" || id.startsWith("lbl")) {
           el.innerHTML = langDict[id];
         } else {
           el.textContent = langDict[id];
