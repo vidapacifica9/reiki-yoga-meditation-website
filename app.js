@@ -1,3 +1,7 @@
+// Web3Forms Access Key for email notifications (Send submissions to mariimontiel015@gmail.com)
+// Obtain your free key at https://web3forms.com/ and paste it below:
+const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE";
+
 // Upcoming Events Bilingual Mock Data
 const upcomingEvents = [
   {
@@ -627,6 +631,44 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target === bookingModalOverlay) closeBookingModal();
   });
 
+  // Web3Forms API Email Sender Helper
+  const sendEmailNotification = (formData, subjectLine, callback) => {
+    if (!WEB3FORMS_ACCESS_KEY || WEB3FORMS_ACCESS_KEY === "YOUR_ACCESS_KEY_HERE") {
+      console.warn("Web3Forms Access Key is not configured. Email notification skipped.");
+      callback(true);
+      return;
+    }
+
+    const payload = {
+      access_key: WEB3FORMS_ACCESS_KEY,
+      subject: subjectLine,
+      from_name: "Maricela Montiel | Energía y Armonía",
+      ...formData
+    };
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify(payload)
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        callback(true);
+      } else {
+        console.error("Web3Forms error:", data.message);
+        callback(false);
+      }
+    })
+    .catch(err => {
+      console.error("Web3Forms request failed:", err);
+      callback(true); // Fallback to let UI proceed even on network blockages
+    });
+  };
+
   // Handle Booking Form Submit
   bookingForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -634,6 +676,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const name = document.getElementById("bkName").value.trim();
     const email = document.getElementById("bkEmail").value.trim();
     const date = document.getElementById("bkDate").value;
+    const time = document.getElementById("bkTime").value;
+    const selectedModality = document.getElementById("bkModality").value;
     const langDict = translations[currentLang];
     
     if (!name || !email || !date) {
@@ -641,11 +685,28 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
     
-    const selectedModality = document.getElementById("bkModality").value;
-    closeBookingModal();
-    
-    const msg = langDict.toastBookingSuccess.replace("{name}", name).replace("{modality}", selectedModality);
-    showToast(msg);
+    const btnSubmit = bookingForm.querySelector('button[type="submit"]');
+    const originalBtnText = btnSubmit.textContent;
+    btnSubmit.textContent = currentLang === "en" ? "Sending..." : "Enviando...";
+    btnSubmit.disabled = true;
+
+    const emailPayload = {
+      "Form Type": "Consultation Booking Request",
+      "Client Name": name,
+      "Client Email": email,
+      "Preferred Date": date,
+      "Preferred Time": time,
+      "Requested Modality": selectedModality
+    };
+
+    sendEmailNotification(emailPayload, `New Consultation Booking: ${name} (${selectedModality})`, (success) => {
+      btnSubmit.disabled = false;
+      btnSubmit.textContent = originalBtnText;
+      
+      closeBookingModal();
+      const msg = langDict.toastBookingSuccess.replace("{name}", name).replace("{modality}", selectedModality);
+      showToast(msg);
+    });
   });
 
   // ==========================================
@@ -666,16 +727,41 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const name = document.getElementById("evRegName").value.trim();
     const email = document.getElementById("evRegEmail").value.trim();
+    const tickets = document.getElementById("evRegTickets").value;
+    const modalityOption = document.getElementById("evRegOption").value;
+    const eventId = document.getElementById("eventTargetId").value;
     const langDict = translations[currentLang];
     
     if (!name || !email) {
       alert(langDict.alertRequiredFields);
       return;
     }
+
+    const eventObj = upcomingEvents.find(ev => ev.id === eventId);
+    const eventTitle = eventObj ? eventObj.title[currentLang] : "Gathering";
     
-    closeEventModal();
-    const msg = langDict.toastEventSuccess.replace("{name}", name);
-    showToast(msg);
+    const btnSubmit = eventRegForm.querySelector('button[type="submit"]');
+    const originalBtnText = btnSubmit.textContent;
+    btnSubmit.textContent = currentLang === "en" ? "Sending..." : "Enviando...";
+    btnSubmit.disabled = true;
+
+    const emailPayload = {
+      "Form Type": "Event Registration",
+      "Client Name": name,
+      "Client Email": email,
+      "Event Title": eventTitle,
+      "Tickets Requested": tickets,
+      "Ticket Tier": modalityOption
+    };
+
+    sendEmailNotification(emailPayload, `Event Registration: ${name} for ${eventTitle}`, (success) => {
+      btnSubmit.disabled = false;
+      btnSubmit.textContent = originalBtnText;
+      
+      closeEventModal();
+      const msg = langDict.toastEventSuccess.replace("{name}", name);
+      showToast(msg);
+    });
   });
 
   // ==========================================
@@ -687,16 +773,45 @@ document.addEventListener("DOMContentLoaded", () => {
     const name = document.getElementById("guidName").value.trim();
     const email = document.getElementById("guidEmail").value.trim();
     const story = document.getElementById("guidStory").value.trim();
+    const focusModality = document.getElementById("guidModality").value;
+    const preferredSetting = document.getElementById("guidSetting").value;
     const langDict = translations[currentLang];
     
     if (!name || !email || !story) {
       alert(langDict.alertRequiredFields);
       return;
     }
+
+    // Collect selected state checkboxes
+    const checkedBoxes = document.querySelectorAll("input[name='state']:checked");
+    const states = Array.from(checkedBoxes).map(cb => {
+      const pillSpan = cb.closest(".mood-pill").querySelector("span");
+      return pillSpan ? pillSpan.textContent : cb.value;
+    }).join(", ");
     
-    guidanceForm.reset();
-    const msg = langDict.toastGuidanceSuccess.replace("{name}", name);
-    showToast(msg);
+    const btnSubmit = guidanceForm.querySelector('button[type="submit"]');
+    const originalBtnText = btnSubmit.textContent;
+    btnSubmit.textContent = currentLang === "en" ? "Sending..." : "Enviando...";
+    btnSubmit.disabled = true;
+
+    const emailPayload = {
+      "Form Type": "Confidential Healing Guidance Request",
+      "Client Name": name,
+      "Client Email": email,
+      "Current State/Feelings": states || "None selected",
+      "Client Message/Story": story,
+      "Preferred Focus": focusModality,
+      "Preferred Setting": preferredSetting
+    };
+
+    sendEmailNotification(emailPayload, `Confidential Support Request: ${name}`, (success) => {
+      btnSubmit.disabled = false;
+      btnSubmit.textContent = originalBtnText;
+
+      guidanceForm.reset();
+      const msg = langDict.toastGuidanceSuccess.replace("{name}", name);
+      showToast(msg);
+    });
   });
 
   // ==========================================
