@@ -1,6 +1,6 @@
 // Web3Forms Access Key for email notifications (Send submissions to mariimontiel015@gmail.com)
 // Obtain your free key at https://web3forms.com/ and paste it below:
-const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE";
+const WEB3FORMS_ACCESS_KEY = "319d82eb-a017-4717-88ec-ca5303e2e815";
 
 // Upcoming Events Bilingual Mock Data
 const upcomingEvents = [
